@@ -36,6 +36,7 @@ public class CCRegistration {
             add(new PocketPlayerDetectorUpgrade());
             add(new PocketGeoScannerUpgrade());
             add(new PocketColonyIntegratorUpgrade());
+            add(new PocketARControllerUpgrade());
         }};
         pocketUpgrades.forEach(ComputerCraftAPI::registerPocketUpgrade);
     }

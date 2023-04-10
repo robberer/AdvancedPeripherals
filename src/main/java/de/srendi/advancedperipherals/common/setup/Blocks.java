@@ -44,7 +44,7 @@ public class Blocks {
     public static final RegistryObject<Block> PERIPHERAL_CASING = register("peripheral_casing", () -> new Block(AbstractBlock.Properties.of(Material.METAL).harvestLevel(2).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(5, 5)),
             () -> new APBlockItem(Blocks.PERIPHERAL_CASING.get(), new Item.Properties().stacksTo(16), null, null, () -> true));
     public static final RegistryObject<Block> AR_CONTROLLER = register("ar_controller", () -> new APTileEntityBlock<>(TileEntityTypes.AR_CONTROLLER),
-            () -> new APBlockItem(Blocks.AR_CONTROLLER.get(), null, null, APConfig.PERIPHERALS_CONFIG.ENABLE_AR_GOGGLES::get));
+            () -> new APBlockItem(Blocks.AR_CONTROLLER.get(), null, PocketARControllerUpgrade.ID, APConfig.PERIPHERALS_CONFIG.ENABLE_AR_GOGGLES::get));
     public static final RegistryObject<Block> INVENTORY_MANAGER = register("inventory_manager", () -> new APTileEntityBlock<>(TileEntityTypes.INVENTORY_MANAGER),
             () -> new APBlockItem(Blocks.INVENTORY_MANAGER.get(), null, null, APConfig.PERIPHERALS_CONFIG.ENABLE_INVENTORY_MANAGER::get));
     public static final RegistryObject<Block> REDSTONE_INTEGRATOR = register("redstone_integrator", RedstoneIntegratorBlock::new,

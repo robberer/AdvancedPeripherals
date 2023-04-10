@@ -3,20 +3,31 @@ package de.srendi.advancedperipherals.common.addons.computercraft.peripheral;
 import dan200.computercraft.api.lua.LuaException;
 import dan200.computercraft.api.lua.LuaFunction;
 import dan200.computercraft.api.lua.MethodResult;
+import dan200.computercraft.api.pocket.IPocketAccess;
 import de.srendi.advancedperipherals.common.argoggles.ARRenderAction;
 import de.srendi.advancedperipherals.common.argoggles.RenderActionType;
 import de.srendi.advancedperipherals.common.blocks.tileentity.ARControllerTile;
 import de.srendi.advancedperipherals.common.configuration.APConfig;
 import de.srendi.advancedperipherals.lib.peripherals.BasePeripheral;
 import de.srendi.advancedperipherals.lib.peripherals.owner.TileEntityPeripheralOwner;
+import de.srendi.advancedperipherals.lib.peripherals.owner.IPeripheralOwner;
+import de.srendi.advancedperipherals.lib.peripherals.owner.PocketPeripheralOwner;
 
 import java.util.Optional;
 
 public class ARControllerPeripheral extends BasePeripheral<TileEntityPeripheralOwner<ARControllerTile>> {
     public static final String TYPE = "arController";
 
+    protected ARControllerPeripheral(IPeripheralOwner owner) {
+        super(TYPE, owner);
+    }
+
     public ARControllerPeripheral(ARControllerTile tileEntity) {
         super(TYPE, new TileEntityPeripheralOwner<>(tileEntity));
+    }
+
+    public ARControllerPeripheral(IPocketAccess pocket) {
+        this(new PocketPeripheralOwner(pocket));
     }
 
     @Override
